@@ -15,7 +15,10 @@ gulp.task('build', function () {
   };
   const babelifyOptions = {
     presets: ['es2015'],
-    plugins: ['babel-plugin-transform-object-rest-spread']
+    plugins: [
+      'transform-object-rest-spread',
+      'transform-es2015-modules-commonjs'
+    ]
   };
   const stream = browserify(browserifyOptions)
     .transform(babelify.configure(babelifyOptions));
