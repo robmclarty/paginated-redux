@@ -88,25 +88,33 @@ etc.).
 
 ## New Properties in Reducer State
 
-`list`: This is the total, original, array from the base reducer. When you
+#### `list`
+This is the total, original, array from the base reducer. When you
 modify the base array (e.g., by adding a new object, removing one, etc.) this
 array will be updated.
 
-`pageList`: This is an array of objects which represents the current page.
+#### `pageList`
+This is an array of objects which represents the current page.
 
-`cacheList`: This is mostly used internally, but represents all items from
+#### `cacheList`
+This is mostly used internally, but represents all items from
 `list`, but filtered against `filter` which is what's actually used to calculate
 the `pageList` as the pages correspond to what's left over in the `cacheList`.
 
-`page`: The current page number (starting from 1).
+#### `page`
+The current page number (starting from 1).
 
-`total`: The total pages currently available based on `cacheList`.
+#### `total`
+The total pages currently available based on `cacheList`.
 
-`per`: The number of elements that are used for each page.
+#### `per`
+The number of elements that are used for each page.
 
-`order`: The current sort order (either "asc" or "desc").
+#### `order`
+The current sort order (either "asc" or "desc").
 
-`by`: The current sorting property. For example you could sort an array of user
+#### `by`
+The current sorting property. For example you could sort an array of user
 objects by a property "name" (based on the `order`) or change this to instead
 sort by their "lastModified" property (if those are properties you have in your
 user object).
@@ -121,7 +129,8 @@ Note that in the example action creators, I'm using user-specific action names
 since these are what I passed into the paginated transducer to act on this user
 reducer (e.g., `GOTO_PAGE: GOTO_USER_PAGE`).
 
-`GOTO_PAGE`: Go to a specific page defined in the action. For example, to go
+#### `GOTO_PAGE`
+Go to a specific page defined in the action. For example, to go
 to page 5, you might write an action creator that looks like this:
 
 ```javascript
@@ -131,7 +140,8 @@ export const gotoUserPage = page => ({
 });
 ```
 
-`NEXT_PAGE`: Go to the next page in list. If at the last page, go to the first
+#### `NEXT_PAGE`
+Go to the next page in list. If at the last page, go to the first
 page (wraps back around). If you don't want to have this wrapping effect, simply
 check, in your UI, if the current `page` in the state is equal to the `total`
 and either disable or remove the "next" button in your UI.
@@ -142,7 +152,8 @@ export const nextUserPage = () => ({
 });
 ```
 
-`PREV_PAGE`: Go to the previous page in the list. If on the first page, go to
+#### `PREV_PAGE`
+Go to the previous page in the list. If on the first page, go to
 the last page (wraps back around). If you don't want to have this wrapping
 effect, simply check, in your UI, if the current `page` in the state is equal to
 1 and either disable or remove the "previous" button in your UI.
@@ -153,7 +164,8 @@ export const prevUserPage = () => ({
 });
 ```
 
-`SORT`: Sort the current paginated list by the property defined in `by`. If the
+#### `SORT`
+Sort the current paginated list by the property defined in `by`. If the
 current value of `by` in the state is equal to the value passed into the `SORT`
 action, simply toggle the order (reverse the order that it is currently in). If
 the value of `by` in the state is different than the value passed into the
@@ -166,7 +178,8 @@ export const sortUsers = by => ({
 });
 ```
 
-`FILTER`: Filter the list down by matching any property of the objects in the
+#### `FILTER`
+Filter the list down by matching any property of the objects in the
 array against the value of `filter` in the state. This changes the `cacheList`
 by creating a new array with all matching objects from `list` that correspond to
 `filter`.
