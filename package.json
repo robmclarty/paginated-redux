@@ -1,6 +1,6 @@
 {
   "name": "paginated-redux",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A higher order reducer (or transducer) that adds pagination, sorting, and filtering to a reducer of an array of objects.",
   "main": "dist/paginated-redux.js",
   "scripts": {
