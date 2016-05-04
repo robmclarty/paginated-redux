@@ -1,15 +1,25 @@
 {
   "name": "paginated-redux",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A higher order reducer (or transducer) that adds pagination, sorting, and filtering to a reducer of an array of objects.",
   "main": "dist/paginated-redux.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "haha no"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robmclarty/paginated-redux.git"
   },
+  "keywords": [
+    "redux",
+    "reducer",
+    "transducer",
+    "pagination",
+    "sort",
+    "filter",
+    "page",
+    "array"
+  ],
   "author": "Rob McLarty <r@robmclarty.com> (robmclarty.com)",
   "license": "MIT",
   "bugs": {
