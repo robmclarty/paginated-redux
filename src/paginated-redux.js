@@ -1,8 +1,7 @@
-// If `el` has a property named the value of `prop`,
-// and the type of that property is a string,
-// and the value of that property contains the value of `prop`,
-// then return all elements of `arr` that fulfill this criteria, otherwise
-// simply return all of `arr` (e.g., when no filter is provided).
+// Return a new array, a subset of `list`, which matches `filter`. Assumes an
+// array of objects and cyclers through each object, and looks at each property,
+// and compares all string properties to the value of the `filter` string,
+// returning only those which contain an exact match.
 const filteredList = (filter = '', list = []) => {
   if (filter) {
     return list.filter((el) => {
@@ -17,8 +16,8 @@ const filteredList = (filter = '', list = []) => {
   return list;
 };
 
-// Return `arr`, sorted by `prop` in `order`.
-// `order` should be either "asc" or "desc".
+// Return `list` sorted by `prop` in either ascending or decending order based
+// on the value of `order` (either 'asc' or 'desc').
 const sortedList = (prop = 'name', order = 'asc', list = []) => {
   return list.sort((compA, compB) => {
     let a = compA;
@@ -38,19 +37,19 @@ const sortedList = (prop = 'name', order = 'asc', list = []) => {
   });
 };
 
-// Return a new array that is the reverse of list.
+// Return a new array that is the reverse of `list`.
 const reversedList = list => {
   return list.slice().reverse();
 }
 
-// Return the total number of pages that can be made from list.
+// Return the total number of pages that can be made from `list`.
 const totalPages = (per = 10, list = []) => {
   const total = Math.ceil(list.length / per);
 
   return total ? total : 0;
 };
 
-// Return a slice of all `arr` starting at `start` up to `per`
+// Return a slice of all `list` starting at `start` up to `per`
 // (or the length of list; whichever comes first).
 const slicedList = (page = 1, per = 10, list = []) => {
   const start = (page - 1) * per;
