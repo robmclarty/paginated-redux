@@ -205,12 +205,12 @@ const paginatedUsers = paginated(users, {
   SORT: SORT_USERS,
   FILTER: FILTER_USERS
 }, {
-  defaultPage = 1,
-  defaultSortOrder = 'asc',
-  defaultSortBy = 'name',
-  defaultPer = 10,
-  defaultFilter = '',
-  defaultTotal = 0
+  defaultPage: 1,
+  defaultSortOrder: 'asc',
+  defaultSortBy: 'name',
+  defaultPer: 10,
+  defaultFilter: '',
+  defaultTotal: 0
 })
 ```
 

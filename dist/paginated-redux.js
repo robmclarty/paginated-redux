@@ -6,11 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-// If `el` has a property named the value of `prop`,
-// and the type of that property is a string,
-// and the value of that property contains the value of `prop`,
-// then return all elements of `arr` that fulfill this criteria, otherwise
-// simply return all of `arr` (e.g., when no filter is provided).
+// Return a new array, a subset of `list`, which matches `filter`. Assumes an
+// array of objects and cyclers through each object, and looks at each property,
+// and compares all string properties to the value of the `filter` string,
+// returning only those which contain an exact match.
 var filteredList = function filteredList() {
   var filter = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
   var list = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
@@ -26,8 +25,8 @@ var filteredList = function filteredList() {
   return list;
 };
 
-// Return `arr`, sorted by `prop` in `order`.
-// `order` should be either "asc" or "desc".
+// Return `list` sorted by `prop` in either ascending or decending order based
+// on the value of `order` (either 'asc' or 'desc').
 var sortedList = function sortedList() {
   var prop = arguments.length <= 0 || arguments[0] === undefined ? 'name' : arguments[0];
   var order = arguments.length <= 1 || arguments[1] === undefined ? 'asc' : arguments[1];
@@ -51,12 +50,12 @@ var sortedList = function sortedList() {
   });
 };
 
-// Return a new array that is the reverse of list.
+// Return a new array that is the reverse of `list`.
 var reversedList = function reversedList(list) {
   return list.slice().reverse();
 };
 
-// Return the total number of pages that can be made from list.
+// Return the total number of pages that can be made from `list`.
 var totalPages = function totalPages() {
   var per = arguments.length <= 0 || arguments[0] === undefined ? 10 : arguments[0];
   var list = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
@@ -66,7 +65,7 @@ var totalPages = function totalPages() {
   return total ? total : 0;
 };
 
-// Return a slice of all `arr` starting at `start` up to `per`
+// Return a slice of all `list` starting at `start` up to `per`
 // (or the length of list; whichever comes first).
 var slicedList = function slicedList() {
   var page = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
